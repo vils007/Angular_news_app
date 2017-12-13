@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
+import { NewsService} from './news.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [NewsService]
 })
 export class AppComponent {
-  news = [
-    {title: 'title1'},
-    {title: 'title2'},
-    {title: 'title3'},
-    {title: 'title4'},
-    {title: 'title5'},
-    {title: 'title6'},
-    {title: 'ПО русски'},
-  ];
+
+
+  constructor(private  newsService: NewsService) {
+    this.news = newsService.news;
+  }
+  news = [];
 }
