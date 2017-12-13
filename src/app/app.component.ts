@@ -9,9 +9,14 @@ import { NewsService} from './news.service';
 })
 export class AppComponent {
 
+  news = [];
 
   constructor(private  newsService: NewsService) {
-    this.news = newsService.news;
+
   }
-  news = [];
+
+  ngOnInit() {
+    this.news = this.newsService.news;
+  }
+
 }
