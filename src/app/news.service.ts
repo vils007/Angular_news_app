@@ -10,7 +10,10 @@ export class NewsService {
   }
   getNews(){
     // return this.http.get('http://localhost:8080/news').map(response => response.json());
-    return this.http.get('https://randomuser.me/api/?inc=gender,name,picture,location&results=8&nat=gb').map(response => response.json());
+    return this.http.get('https://randomuser.me/api/?inc=gender,name,picture,location&results=8&nat=gb')
+      .map(response => response.json())
+      .map(response => response.results);
+
   }
 
   news = [
