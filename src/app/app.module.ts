@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {NewsComponent} from './news/news.component';
+import {HttpModule} from '@angular/http';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import {NewsComponent} from './news/news.component';
     NewsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

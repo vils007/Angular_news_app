@@ -16,7 +16,10 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.news = this.newsService.news;
+    // this.news = this.newsService.news;
+    this.newsService.getNews().subscribe(news => {
+    console.log(news);
+    });
   }
 
 }
